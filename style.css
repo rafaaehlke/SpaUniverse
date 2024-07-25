@@ -110,7 +110,9 @@ a {
   margin-left: 10.2rem;
 }
 
-.universe {
+/* Background */
+
+body .universe {
   background: var(--bg-universe) no-repeat top center/cover;
 }
 
