@@ -9,6 +9,7 @@
   --bg-home: url(./assets/home-bg.jpg);
   --bg-universe: url(./assets/exploration-bg.png);
   --bg-exploration: url(./assets/universe-bg.jpg);
+  --bg-error: url(./assets/error-bg.jpg);
   --txt-color: #E1E1E6;
   --nav-txt: #C4C4CC;
   --nav-txt-click: #FFF;
@@ -19,6 +20,8 @@ body {
   background: var(--bg-home) no-repeat center center/cover;
   font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
+
+  -webkit-font-smoothing: antialiased;
 }
 
 
@@ -42,6 +45,7 @@ nav>ul {
   padding-left: 7.2rem;
 }
 
+
 a {
   text-decoration: none;
   color: var(--nav-txt);
@@ -50,6 +54,17 @@ a {
   font-style: normal;
   line-height: 21.6rem;
 }
+
+a:active {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: var(--txt-color);
+}
+
+a:hover{
+  transform: scale(1.1);
+}
+
 
 /* HOME */
 .home {
@@ -68,6 +83,8 @@ a {
 
 }
 
+
+
 .home button {
   border-radius: .5rem;
   border: .2rem solid #fff;
@@ -83,6 +100,10 @@ a {
 
 
   padding: 1.2rem 3.2rem;
+}
+
+.home button:hover {
+  opacity: 0.5;
 }
 
 /* Universe e Exploration textos*/
@@ -112,10 +133,14 @@ a {
 
 /* Background */
 
-body .universe {
+body:has(.universe) {
   background: var(--bg-universe) no-repeat top center/cover;
 }
 
-.exploration {
+body:has(.exploration) {
   background: var(--bg-exploration) no-repeat top center/cover;
+}
+
+body:has(.error) {
+  background: var(--bg-error) no-repeat top center/cover;
 }
